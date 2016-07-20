@@ -1,3 +1,7 @@
+body {
+  max-width: 1080px;
+}
+
 .navbar {
   display: inline;
   padding: 20px;
@@ -9,6 +13,6 @@
 }
 
 ul {
-  border-style: solid;
+  /*border-style: solid;*/
   border-width: 5px;
 }
