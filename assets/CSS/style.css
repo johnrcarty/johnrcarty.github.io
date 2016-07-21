@@ -50,22 +50,22 @@ a {
 	margin-bottom: 6px;
 }
 
-.navbar a {
-	font-size: .95em;
-	color: #3acec2;
-	text-transform: uppercase;
-
-}
-
-.navbar a:hover {
-	color: #093a58;
-}
-
 .name a,
 .navbar a {
-  padding: 10px 15px;
-  display: block;
+	padding: 10px 15px;
+	text-align: center;
+	display: block;
 }
+
+	.navbar a {
+		font-size: .95em;
+		color: #3acec2;
+		text-transform: uppercase;
+	}
+
+	.navbar a:hover {
+		color: #093a58;
+	}
 
 /* ---- Layout Containers ---- */
 
@@ -75,7 +75,6 @@ a {
 }
 
 .main-header {
-  text-align: center;
 	padding-top: 1.5em;
 	padding-bottom: 1.5em;
 	background: #3acec2;
@@ -88,32 +87,69 @@ a {
 	background: #d9e4ea;
 }
 
+.profilePicture {
+	width: 300px;
+	float: left;
+	margin-top: 5px;
+	margin-right: 25px;
+	margin-bottom: 25px;
+	padding: 10px;
+	border: solid 1px #d9e4ea;
+}
+
 /* =================================
   Media Queries
 ==================================== */
 
-@media (min-width: 769px) {
+@media (min-width: 789px) {
 
 	.wrap {
 		min-height: calc(100vh - 89px);
 	}
 
 	.container {
-		width: 80%;
+		width: 85%;
 		max-width: 1150px;
 		margin: 0 auto;
 	}
 
-  .name,
-  .navbar li {
-  	display: inline-block;
-  }
+	.navbar {
+		float: right;
+	}
 
-  .name {
-    width: 240px;
-  }
+	.name,
+	.navbar li {
+		float: left;
+	}
 
-  p {
-    columns: 2;
-  }
+	.navbar li {
+		margin-left: 12px;
+	}
+
+	/* ---- Columns ---- */
+
+	.column {
+		float: left;
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+
+	.one {
+		width: 60%;
+	}
+
+	.two {
+		width: 40%;
+	}
+
+	/* ------------- */
+
+
+
+	.clearfix::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
 }
