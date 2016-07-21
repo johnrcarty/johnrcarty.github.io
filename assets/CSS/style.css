@@ -67,6 +67,10 @@ a {
 		color: #093a58;
 	}
 
+	.social {
+		width: 40px;
+	}
+
 /* ---- Layout Containers ---- */
 
 .container {
