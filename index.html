@@ -79,7 +79,7 @@
         });
         console.log(prevLetter)
         $("#letter")[0].innerText = prevLetter;
-        var msg = new SpeechSynthesisUtterance("Hello World");
+        var msg = new SpeechSynthesisUtterance("  "  + prevLetter + "  ");
         window.speechSynthesis.speak(msg);
         })
 });
