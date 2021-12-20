@@ -61,8 +61,8 @@
         });
         console.log(nextLetter)
         $("#letter")[0].innerText = nextLetter;
-        var msg = new SpeechSynthesisUtterance(nextLetter);
-        window.speechSynthesis.speak(msg + "  ");
+        var msg = new SpeechSynthesisUtterance(nextLetter + "  ");
+        window.speechSynthesis.speak(msg);
         })
 
     $("#back").click(function(){
@@ -79,8 +79,8 @@
         });
         console.log(prevLetter)
         $("#letter")[0].innerText = prevLetter;
-        var msg = new SpeechSynthesisUtterance(prevLetter);
-        window.speechSynthesis.speak("Hello World");
+        var msg = new SpeechSynthesisUtterance("Hello World");
+        window.speechSynthesis.speak(msg);
         })
 });
     
