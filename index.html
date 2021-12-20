@@ -8,19 +8,24 @@
   <style>
     body {
     margin:0;
+    width:1000px;
+    height:1000px;
+    background-color: lightblue;
 }
 
 .header {
     height: 80px;
     background-color: lightblue;
+    width: 10%;
+    float: left;
+    height: 95%;
 }
 
 .mainBody {
     background-color: lightblue;
-    position: absolute;
-    top: 200px;
-    bottom: 20px;
-    width:100%;
+    float: left;
+    width:80%;
+    height: 95%;
 }
 
 .content {
@@ -30,33 +35,27 @@
 .footer {
     height: 20px;
     background-color: lightblue;
+    float: left;
     
-    position: absolute;
-    bottom: 0;
     width:100%;
 }
 .letterBox {
     background-color: lightblue;
     color: darkblue;
-    position: absolute;
-    top: 80px;
-    bottom: 200px;
-    width:100%;
+    float: left;
+    width:5%;
+    height: 95%;
 }
     .button1 {
     position: relative;
-    display:inline-block;
     color:#444;
     border:1px solid #CCC;
     background:#DDD;
     cursor:pointer;
     text-align: center;
-    width: 45%;
-    height: 75%;
     }
     .button2 {
     position: relative;
-    display:inline-block;
     color:#444;
     border:1px solid #CCC;
     background:#DDD;
@@ -64,6 +63,35 @@
     text-align: center;
     width: 29.8%;
     height: 20%;
+    }
+
+    .back {
+        background:red;
+        width: 65%;
+        height: 30%;
+    }
+    .next {
+        background:green;
+        width: 65%;
+        height: 30%;
+    }
+    .add {
+        background:blue;
+        width: 34%;
+    }
+    .read {
+        background:orange;
+        width: 34%;
+    }
+    .clear {
+        background:yellow;
+        width: 34%;
+    }
+    .col1 {
+        float: left;
+    }
+    .col2 {
+        float: left;
     }
     
   </style>
@@ -82,11 +110,15 @@
         <h3 id="outPut"></h3>
     </div>
     <div class="mainBody">
-        <div id="add" class="button2" onselectstart="return false"><p>Add</p></div>
-        <div id="read" class="button2" onselectstart="return false"><p>Read</p></div>
-        <div id="clear" class="button2" onselectstart="return false"><p>Clear</p></div>
-        <div id="back" class="button1" onselectstart="return false"><p>Back</p></div>
-        <div id="next" class="button1" onselectstart="return false"><p>Next</p></div>
+        <div class="col1">
+            <div id="clear" class="button2 clear" onselectstart="return false"><p></p></div>
+            <div id="add" class="button2 add" onselectstart="return false"><p></p></div>
+            <div id="read" class="button2 read" onselectstart="return false"><p></p></div>
+        </div>
+        <div class="col2">
+            <div id="back" class="button1 back" onselectstart="return false"><p></p></div>
+            <div id="next" class="button1 next" onselectstart="return false"><p></p></div>
+        </div>
     </div>
     
 </body>
