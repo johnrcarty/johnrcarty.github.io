@@ -62,7 +62,7 @@
     background:#DDD;
     cursor:pointer;
     text-align: center;
-    width: 45%;
+    width: 29.8%;
     height: 20%;
     }
     
@@ -84,6 +84,7 @@
     <div class="mainBody">
         <div id="add" class="button2" onselectstart="return false"><p>Add</p></div>
         <div id="read" class="button2" onselectstart="return false"><p>Read</p></div>
+        <div id="clear" class="button2" onselectstart="return false"><p>Clear</p></div>
         <div id="back" class="button1" onselectstart="return false"><p>Back</p></div>
         <div id="next" class="button1" onselectstart="return false"><p>Next</p></div>
     </div>
@@ -160,7 +161,7 @@
         window.speechSynthesis.speak(msg);
         })
 
-        $("#header").click(function(){
+        $("#clear").click(function(){
             $("#outPut")[0].innerText = "";
             $("#letter")[0].innerText = "A";
         })
