@@ -61,7 +61,7 @@
         });
         console.log(nextLetter)
         $("#letter")[0].innerText = nextLetter;
-        var msg = new SpeechSynthesisUtterance(nextLetter + "  ");
+        var msg = new SpeechSynthesisUtterance("  "  + nextLetter + "  ");
         window.speechSynthesis.speak(msg);
         })
 
