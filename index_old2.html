@@ -43,7 +43,7 @@
     bottom: 200px;
     width:100%;
 }
-    .button1 {
+    .button {
     position: relative;
     display:inline-block;
     color:#444;
@@ -52,18 +52,7 @@
     cursor:pointer;
     text-align: center;
     width: 45%;
-    height: 75%;
-    }
-    .button2 {
-    position: relative;
-    display:inline-block;
-    color:#444;
-    border:1px solid #CCC;
-    background:#DDD;
-    cursor:pointer;
-    text-align: center;
-    width: 45%;
-    height: 20%;
+    height: 100%;
     }
     
   </style>
@@ -74,18 +63,15 @@
 <body>
     
 
-    <div class="header" id="header">
+    <div class="header">
         <h1>Tap Text</h1>
     </div>
     <div class="letterBox">
         <h1 id="letter" class="letter">A</h1>
-        <h3 id="outPut"></h3>
     </div>
     <div class="mainBody">
-        <div id="add" class="button2" onselectstart="return false"><p>Add</p></div>
-        <div id="read" class="button2" onselectstart="return false"><p>Read</p></div>
-        <div id="back" class="button1" onselectstart="return false"><p>Back</p></div>
-        <div id="next" class="button1" onselectstart="return false"><p>Next</p></div>
+        <div id="back" class="button" onselectstart="return false"><p>Back</p></div>
+        <div id="next" class="button" onselectstart="return false"><p>Next</p></div>
     </div>
     
 </body>
@@ -95,7 +81,7 @@
     
     $(document).ready(function() {
         function nextLetter(s){
-        return s.replace(/([a-zA-Z])[^a-zA-Z]*$/, function(a){
+        return s.replace(/([a-zA-Z0-9])[^a-zA-Z0-9]*$/, function(a){
             var c= a.charCodeAt(0);
             switch(c){
                 case 90: return 'A';
@@ -112,13 +98,12 @@
     $("#next").click(function(){
         const value = $("#letter")[0].innerText
         console.log(value)
-        const nextLetter = value.replace(/([a-zA-Z0-9])[^a-zA-Z0-9]*$/, function(a){
+        const nextLetter = value.replace(/([a-zA-Z])[^a-zA-Z]*$/, function(a){
             var c= a.charCodeAt(0);
             console.log(c)
             switch(c){
-                case 90: return '1';
-                case 57: return 'A';
-                case 122: return 'A';
+                case 90: return 'A';
+                case 122: return 'a';
                 default: return String.fromCharCode(++c);
             }
         });
@@ -128,15 +113,15 @@
         window.speechSynthesis.speak(msg);
         })
 
-        $("#back").click(function(){
+    $("#back").click(function(){
         const value = $("#letter")[0].innerText
         console.log(value)
-        const prevLetter = value.replace(/([a-zA-Z0-9])[^a-zA-Z0-9]*$/, function(a){
+        const prevLetter = value.replace(/([a-zA-Z])[^a-zA-Z]*$/, function(a){
             var c= a.charCodeAt(0);
             console.log(c)
             switch(c){
-                case 65: return '9';
-                case 49: return 'Z';
+                case 65: return 'Z';
+                case 122: return 'z';
                 default: return String.fromCharCode(--c);
             }
         });
@@ -144,25 +129,6 @@
         $("#letter")[0].innerText = prevLetter;
         var msg = new SpeechSynthesisUtterance("  "  + prevLetter + "  ");
         window.speechSynthesis.speak(msg);
-        })
-
-        $("#add").click(function(){
-        const value = $("#letter")[0].innerText
-        console.log(value)
-        $("#outPut")[0].innerText += value;
-        $("#letter")[0].innerText = "A";
-        })
-
-        $("#read").click(function(){
-        const value = $("#outPut")[0].innerText
-        console.log(value)
-        var msg = new SpeechSynthesisUtterance("  "  + value + "  ");
-        window.speechSynthesis.speak(msg);
-        })
-
-        $("#header").click(function(){
-            $("#outPut")[0].innerText = "";
-            $("#letter")[0].innerText = "A";
         })
 });
     
