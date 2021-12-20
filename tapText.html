@@ -74,7 +74,7 @@
 <body>
     
 
-    <div class="header">
+    <div class="header" id="header">
         <h1>Tap Text</h1>
     </div>
     <div class="letterBox">
@@ -86,9 +86,6 @@
         <div id="next" class="button1" onselectstart="return false"><p>Next</p></div>
         <div id="add" class="button2" onselectstart="return false"><p>Add</p></div>
         <div id="read" class="button2" onselectstart="return false"><p>Read</p></div>
-    </div>
-    <div class="footer">
-        <h1>footer</h1>
     </div>
     
 </body>
@@ -152,6 +149,7 @@
         const value = $("#letter")[0].innerText
         console.log(value)
         $("#outPut")[0].innerText += value;
+        $("#letter")[0].innerText = "A";
         })
 
         $("#read").click(function(){
@@ -159,6 +157,11 @@
         console.log(value)
         var msg = new SpeechSynthesisUtterance("  "  + value + "  ");
         window.speechSynthesis.speak(msg);
+        })
+
+        $("#header").click(function(){
+            $("#outPut")[0].innerText = "";
+            $("#letter")[0].innerText = "A";
         })
 });
     
